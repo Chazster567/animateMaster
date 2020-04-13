@@ -1,11 +1,15 @@
 body{
   font-family: 'Roboto', sans-serif;
-  background-color: #ffe4c7;
-  background-image: url(https://www.transparenttextures.com/patterns/diamond-upholstery.png);
+  background-color: #bcc8cc;
+  background-image: url(https://www.transparenttextures.com/patterns/asfalt-dark.png);
 }
 
 h1, h2, h3, h4, h5, h6{
   font-family: 'Raleway', sans-serif;
+}
+
+.loginbox {
+  color:#fff
 }
 
 .aboutUsSection{
@@ -13,8 +17,8 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .filled{
-  background-color: #ffe4c7;
-  background-image: url(https://www.transparenttextures.com/patterns/diamond-upholstery.png); 
+  background-color: #bcc8cc;
+  background-image: url(https://www.transparenttextures.com/patterns/asfalt-dark.png);
 }
 
 footer{
@@ -92,10 +96,14 @@ footer{
   margin: 0;
 }
 
-.navbar-brand {
-  padding: 0;
+.branding {
+  height: 25px;
 }
 
 .logo {
   margin: 0;
+}
+
+.avatar {
+  border-radius: 50%;
 }
