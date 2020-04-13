@@ -1,0 +1,101 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffe4c7;
+  background-image: url(https://www.transparenttextures.com/patterns/diamond-upholstery.png);
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Raleway', sans-serif;
+}
+
+.aboutUsSection{
+  background-color: #ccc;
+}
+
+.filled{
+  background-color: #ffe4c7;
+  background-image: url(https://www.transparenttextures.com/patterns/diamond-upholstery.png); 
+}
+
+footer{
+  background-color: #111;
+  color: #fff;
+}
+
+.titlemain {
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 55%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.topspace {
+  margin-top: 100vh;
+}
+
+.logo {
+  margin: 0;
+  padding-top: 25%;
+  position: absolute;
+  left: 45%;
+}
+
+.wait {
+  animation-delay: 0.5s;
+}
+
+.wait2 {
+  animation-delay: 1s;
+}
+
+.nav {
+  margin-right: 10px;
+
+}
+
+.btn-primary{
+  background-color: #bada55;
+}
+
+.btn-primary:hover{
+  background-color: black;
+}
+
+.red{
+  color: #AD1E00
+}
+
+.purple{
+  color: #5B3271
+}
+
+.blue-light{
+  color: #01C6FB
+}
+
+.blue-dark{
+  color: #232563
+}
+
+@media screen and (max-width: 768px) {
+  h1.resize {
+    font-size: 40pt;
+  }
+}
+
+#navigation {
+  background-color: rgba(72, 8, 111, 0.4);
+  border: 0 none;
+  margin: 0;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.logo {
+  margin: 0;
+}
