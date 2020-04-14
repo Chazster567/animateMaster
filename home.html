@@ -13,35 +13,46 @@
   </head>
 
   <body id="nav">
-    <nav class="navbar filled sticky-top navbar-expand-lg navbar-light text-uppercase">
-      <a href="">
-        <img src="assets/animateLogo.svg" class="branding">
-      </a>
-      <button class="navbar-toggler ml-auto text-uppercase bg-primary text-white rounded" data-toggle="collapse" data-target="#mobileMenu">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="mobileMenu">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#calendar">Calendar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#pets">Pets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#profile">Profile</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="container">
+      <nav class="navbar sticky-top navbar-expand-md navbar-light text-uppercase" style="background-color: rgb(255, 255, 255);">
+        <a href="">
+          <img src="assets/animateLogo.svg" class="branding">
+        </a>
+        <button class="navbar-toggler ml-auto text-uppercase text-white rounded" style="background-color: #720429;" data-toggle="collapse" data-target="#mobileMenu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="mobileMenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#calendar">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pets">Pets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#profile">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-    <section class="place overfillno" id="calendar">
+    <section class="place" id="calendar">
+      <div class="row overfillno">
+        <h2>Calendar</h2>
+      </div>
     </section>
 
     <section class="place overfillno" id="pets">
+      <div class="row overfillno">
+        <h2>Pets</h2>
+      </div>
     </section>
 
     <section class="place overfillno" id="profile">
+      <div class="row overfillno">
+        <h2>Profile</h2>
+      </div>
     </section>
 
     <script src="js/jquery.min.js"></script>

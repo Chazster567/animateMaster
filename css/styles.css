@@ -1,7 +1,7 @@
 body{
   font-family: 'Roboto', sans-serif;
   background-color: #c3c8ca;
-  background-image: url(https://www.transparenttextures.com/patterns/asfalt-dark.png);
+  background-image: url(https://www.transparenttextures.com/patterns/arches.png);
   max-width: 100%;
 }
 
@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6{
 
 .filled{
   background-color: #c3c8ca;
-  background-image: url(https://www.transparenttextures.com/patterns/asfalt-dark.png);
+  background-image: url(https://www.transparenttextures.com/patterns/arches.png);
 }
 
 footer{
@@ -104,22 +104,6 @@ footer{
   background-color: black;
 }
 
-.red{
-  color: #AD1E00
-}
-
-.purple{
-  color: #5B3271
-}
-
-.blue-light{
-  color: #01C6FB
-}
-
-.blue-dark{
-  color: #232563
-}
-
 #navigation {
   background-color: rgba(72, 8, 111, 0.4);
   border: 0 none;
@@ -127,7 +111,7 @@ footer{
 }
 
 .branding {
-  height: 25px;
+  height: 30px;
 }
 
 .logo {
