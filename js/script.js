@@ -13,3 +13,10 @@ function addPulse(e){
 function removePulse(e){
   this.classList.remove('animated', 'pulse');
 }
+
+$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".sticky-top");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});

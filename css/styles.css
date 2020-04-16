@@ -1,16 +1,16 @@
 body{
   font-family: 'Roboto', sans-serif;
-  background-color: #c3c8ca;
-  background-image: url(https://www.transparenttextures.com/patterns/arches.png);
-  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6{
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-.overfillno {
-  max-width: 100%;
+body.bGround {
+  background: url(/assets/animateBack.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .loginspace {
@@ -46,6 +46,7 @@ h1, h2, h3, h4, h5, h6{
   background: transparent;
   outline: none;
   width: 80%;
+  color: #c3c8ca;
 }
 
 .loginbox input[type="submit"] {
@@ -72,11 +73,6 @@ h1, h2, h3, h4, h5, h6{
   background-color: #111;
   border-radius: 20px;
   padding:35px;
-}
-
-.filled{
-  background-color: #c3c8ca;
-  background-image: url(https://www.transparenttextures.com/patterns/arches.png);
 }
 
 footer{
@@ -111,7 +107,8 @@ footer{
 }
 
 .branding {
-  height: 45px;
+  width: 60px;
+  padding-right: 10%;
 }
 
 .logo {
@@ -121,4 +118,8 @@ footer{
 .avatar {
   width: 40%;
   border-radius: 50%;
+}
+
+.sticky-top.scrolled {
+  box-shadow: 0 3px 3px -3px rgba(0,0,0,0.5);
 }
