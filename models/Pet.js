@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 
-const ContactSchema = new mongoose.Schema({
+const PetSchema = new mongoose.Schema({
     name: {
         type: String
     },
-    email: {
+    age: {
         type: String
     },
-    number: {
+    breed: {
         type: String
     },
     date: {
@@ -16,4 +16,4 @@ const ContactSchema = new mongoose.Schema({
     }
 });
 
-module.exports = Contact = mongoose.model('contact', ContactSchema);
+module.exports = Pet = mongoose.model('pet', PetSchema);
