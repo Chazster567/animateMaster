@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var handlebars = require('express-handlebars');
+var bcrypt = require('bcryptjs');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var User = require('./models/User');
@@ -18,11 +19,11 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req, res) => {
+app.get('/login', (req, res) => {
     res.render('signIn', { layout: 'account' });
 })
 
-app.get('/create', (req, res) => {
+app.get('/', (req, res) => {
     res.render('signUp', { layout: 'account' });
 })
 
@@ -30,14 +31,29 @@ app.get('/home', (req, res) => {
     res.render('home', { layout: 'main' });
 })
 
-app.post('/signup', (req, res) =>{
+app.post('/signup', async (req, res) =>{
     const { username, password } = req.body;
-    var user = new User({
-        username,
-        password
-    });
-    user.save();
-    res.redirect('/');
+    try{
+        let user = await User.findOne({ username });
+
+        if (user) {
+            return res.status(400).render('signIn', { layout: 'account', userExist: true });
+        }
+        user = new User({
+            username,
+            password
+        });
+
+        const salt = await bcrypt.genSalt(10);
+
+        user.password = await bcrypt.hash(password, salt);
+
+        await user.save();
+        res.status(200).render('signIn', { layout: 'account', userDoesNotExist: true });
+    } catch (err){
+        console.log(err.message);
+        res.status(500).send('Server Error');
+    }
 })
 
 app.post('/petadd', (req, res) =>{

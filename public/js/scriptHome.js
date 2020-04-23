@@ -13,3 +13,10 @@ navBrand.addEventListener('animationend', removePulse);
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(navLink => navLink.addEventListener('mouseenter', addPulse));
 navLinks.forEach(navLink => navLink.addEventListener('animationend', removePulse));
+
+$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".sticky-top");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});

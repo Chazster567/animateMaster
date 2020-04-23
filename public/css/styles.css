@@ -23,6 +23,10 @@ body.bGround {
   transform: translate(0, -50%);
 }
 
+.msguser {
+  color: #c3c8ca;
+}
+
 .loginbox h2 {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -75,6 +79,11 @@ body.bGround {
   padding:35px;
 }
 
+.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
 footer{
   background-color: #111;
   color: #fff;
@@ -113,11 +122,6 @@ footer{
 
 .logo {
   margin: 0;
-}
-
-.avatar {
-  width: 40%;
-  border-radius: 50%;
 }
 
 .sticky-top.scrolled {
