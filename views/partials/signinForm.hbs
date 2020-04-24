@@ -3,12 +3,12 @@
 {{else}} {{#if userDoesNotExist}}
 <div class="msguser">User created! Hurray!</a>
 {{/if}}{{/if}}
-<form>
+<form action="/signin" method="POST">
     <p>Username</p>
     <input type="text" name="username" placeholder="Enter Username">
     <p>Password</p>
     <input type="password" name="password" placeholder="Enter Password">
-    <input type="submit" name="submit" placeholder="Login"><br>
+    <input type="submit" value="Submit"><br>
     <a href="">Forgotten Password?</a><br>
-    <a href="/">Don't have an account?</a>
+    <a href="/create">Don't have an account?</a>
 </form>

@@ -23,11 +23,11 @@ app.get('/login', (req, res) => {
     res.render('signIn', { layout: 'account' });
 })
 
-app.get('/', (req, res) => {
+app.get('/create', (req, res) => {
     res.render('signUp', { layout: 'account' });
 })
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home', { layout: 'main' });
 })
 
@@ -56,6 +56,22 @@ app.post('/signup', async (req, res) =>{
     }
 })
 
+app.post('/signin', async (req, res) =>{
+    const { username } = req.body;
+    try{
+        let user = await User.findOne({ username });
+
+        if (user) {
+            return res.status(200).render('home', { layout: 'main', userExist: true, userName: user.username });
+        }
+
+        res.status(400).render('signIn', { layout: 'account', userDoesNotExist: true });
+    } catch (err){
+        console.log(err.message);
+        res.status(500).send('Server Error');
+    }
+})
+
 app.post('/petadd', (req, res) =>{
     const { name, age, breed } = req.body;
     var pet = new Pet({
@@ -64,7 +80,7 @@ app.post('/petadd', (req, res) =>{
         breed
     });
     pet.save();
-    res.redirect('/home');
+    res.redirect('/');
 })
 
 mongoose.connect('mongodb://localhost:27017/animate', {

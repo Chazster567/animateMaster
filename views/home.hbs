@@ -18,9 +18,19 @@
               <a class="nav-link" href="#profile">Profile</a>
             </li>
           </ul>
+          {{#if userExist}}
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Login</a></li>
+              <a class="nav-link">Welcome,</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">{{userName}}</a>
+            </li>
+          </ul>
+          {{else}}
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a></li>
             <li class= "nav-item">
               <a class="nav-link disabled">or</a>
             </li>
@@ -28,6 +38,7 @@
               <a class="nav-link" href="/create">Sign up</a>
             </li>
           </ul>
+          {{/if}}
         </div>
       <div class="col-md-1"></div>
     </nav>
@@ -37,7 +48,7 @@
     </section>
 
     <section id="calendar">
-      <div class="row overfillno">
+      <div class="row overfillno" style="margin-top: 100vh;">
         <div class="col-md-10 col-xs-12 offset-md-1 justify-content-center text-center">
           <h2>Calendar</h2>
         </div>
