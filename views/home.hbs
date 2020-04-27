@@ -18,13 +18,13 @@
               <a class="nav-link" href="#profile">Profile</a>
             </li>
           </ul>
-          {{#if userExist}}
+          {{#if userLogged}}
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link">Welcome,</a>
+              <a class="nav-link">{{username}},</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">{{userName}}</a>
+              <a class="nav-link" href="/signout">Logout?</a>
             </li>
           </ul>
           {{else}}
