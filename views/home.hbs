@@ -27,24 +27,16 @@
               <a class="nav-link" href="/signout">Logout?</a>
             </li>
           </ul>
-          {{else}}
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a></li>
-            <li class= "nav-item">
-              <a class="nav-link disabled">or</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/create">Sign up</a>
-            </li>
-          </ul>
-          {{/if}}
         </div>
       <div class="col-md-1"></div>
     </nav>
 
     <section id="head">
-      <img class="vari" src="assets/animateHead.png">
+      <picture>
+      <source class="vari" media="(min-width: 992px)" srcset="assets/animateHead.png">
+      <source class="vari" media="(min-width: 576px)" srcset="assets/animateHeadMed.png">
+      <img class="vari" src="assets/animateHeadSml.png" alt="HeaderImage">
+      </picture>
     </section>
 
     <section id="calendar">
@@ -131,5 +123,28 @@
           </div>
         </div>
     </footer>
+          {{else}}
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a></li>
+            <li class= "nav-item">
+              <a class="nav-link disabled">or</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/create">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      <div class="col-md-1"></div>
+    </nav>
 
+    <section id="head">
+      <picture>
+      <source media="(min-width: 992px)" class="vari" srcset="assets/animateHead.png">
+      <source media="(min-width: 576px)" class="vari" srcset="assets/animateHeadMed.png">
+      <img class="vari" src="assets/animateHeadSml.png" alt="HeaderImage">
+      </picture>
+    </section>
+          {{/if}}
+        
 <script src="/js/scriptHome.js"></script>
