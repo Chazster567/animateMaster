@@ -22,8 +22,9 @@ app.use(express.static('public'));
 app.use(session({
     secret: 'mySecret',
     resave: true,
-    saveUninitialized: true
-}))
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -44,7 +45,19 @@ app.get('/', (req, res) => {
 })
 
 app.get('/home', isAuth, (req, res) => {
-    res.render('home', { layout: 'main', userLogged: true, username: req.user.username });
+    try {
+        Pet.find({ user: req.user.id }).lean()
+            .exec((err, pets) => {
+                if (pets.length) {
+                    res.render('home', { layout: 'main', pets: pets, petsExist: true, userLogged: true, username: req.user.username });
+                } else {
+                    res.render('home', { layout: 'main', pets: pets, petsExist: false, userLogged: true, username: req.user.username });
+                }
+            });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send('Server Error')
+    }
 })
 
 app.post('/signup', async (req, res) =>{
@@ -76,7 +89,7 @@ app.post('/signin', (req, res, next) =>{
     try{
         passport.authenticate('local', {
             successRedirect: '/home',
-            failureRedirect: 'login'
+            failureRedirect: '/login?incorrectLogin'
         })(req, res, next);
     } catch (err){
         console.log(err.message);
@@ -92,12 +105,13 @@ app.get('/signout', (req, res) =>{
 app.post('/petadd', (req, res) =>{
     const { name, age, breed } = req.body;
     var pet = new Pet({
+        user: req.user.id,
         name,
         age,
         breed
     });
     pet.save();
-    res.redirect('/');
+    res.redirect('/home?petSaved');
 })
 
 mongoose.connect('mongodb://localhost:27017/animate', {

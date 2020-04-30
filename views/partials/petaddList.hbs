@@ -1,0 +1,13 @@
+{{!-- Contacts List --}}
+<div class="messageContainer"></div>
+{{#if petsExist}}
+{{#each pets}}
+<div class="col-4 carded">
+    <h2>{{this.name}}</h2>
+    <p>{{this.age}}</p>
+    <p>{{this.breed}}</p>
+</div>
+{{/each}}
+{{else}}
+<h1>No Contacts</h1>
+{{/if}}

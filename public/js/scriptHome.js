@@ -23,3 +23,10 @@ $(function () {
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
   });
 });
+
+const messageContainer = document.querySelector('.messageContainer');
+const queryString = window.location.search;
+
+if (queryString == '?petSaved') {
+    messageContainer.innerHTML = `<div>Pet Saved!</div>`;
+}
