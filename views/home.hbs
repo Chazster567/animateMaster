@@ -1,3 +1,7 @@
+<div class="loader-wrapper" id="overlayer">
+  <img class="loader" src="assets/animateIcon.svg">
+</div>
+
 <nav class="navbar sticky-top navbar-expand-md navbar-light text-uppercase" style="background-color: white;">
       <div class="col-md-1"></div>
         <a href="">
@@ -59,6 +63,7 @@
             <div class="row">
             <div class="col-lg-6">
               <img class="avatar-pet" src="assets/avatar.svg">
+              <h2>Add Pet</h2>
             </div>
             <div class="col-lg-6">
               {{>petaddForm}}
@@ -131,6 +136,7 @@
         </div>
     </footer>
           {{else}}
+
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="/login">Login</a></li>

@@ -133,7 +133,7 @@ body.bGround {
 }
 
 .avatar-pet {
-  width: 70%;
+  width: 50%;
   border-radius: 50%;
 }
 
@@ -280,4 +280,48 @@ footer{
   {
     text-align:center
   }
+}
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99998;
+  background-color: #720429;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+display: inline-block;
+width: 100px;
+height: 100px;
+position: absolute;
+z-index: 99999;
+animation: loader 2s infinite ease;
+}
+
+@keyframes loader {
+0% {
+  transform: rotate(0deg);
+}
+
+25% {
+  transform: rotate(180deg);
+}
+
+50% {
+  transform: rotate(180deg);
+}
+
+75% {
+  transform: rotate(360deg);
+}
+
+100% {
+  transform: rotate(360deg);
+}
 }
