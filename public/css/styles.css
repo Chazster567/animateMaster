@@ -296,32 +296,52 @@ footer{
 }
 
 .loader {
-display: inline-block;
-width: 100px;
-height: 100px;
-position: absolute;
-z-index: 99999;
-animation: loader 2s infinite ease;
+  border-top:3px solid #c3c8ca;
+  border-radius: 100%;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  z-index: 99999;
+  animation: loader 2s infinite ease;
 }
 
-@keyframes loader {
+.loader-icon {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  z-index: 99999;
+  animation: loader-icon 2s infinite ease;
+}
+
+@keyframes loader-icon {
 0% {
-  transform: rotate(0deg);
+  transform: scale(1);
 }
 
 25% {
-  transform: rotate(180deg);
+  transform: scale(1.05);
 }
 
 50% {
-  transform: rotate(180deg);
+  transform: scale(1);
 }
 
 75% {
-  transform: rotate(360deg);
+  transform: scale(1.05);
 }
 
 100% {
-  transform: rotate(360deg);
+  transform: scale(1);
 }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
 }
