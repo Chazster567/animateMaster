@@ -9,6 +9,8 @@ var bodyParser = require('body-parser');
 var { isAuth } = require('./middleware/isAuth')
 var User = require('./models/User');
 var Pet = require('./models/Pet')
+const port = process.env.port || 3000;
+const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/animate';
 require('./middleware/passport')(passport);
 
 app.set('view engine', 'hbs');
@@ -114,18 +116,18 @@ app.post('/petadd', (req, res) =>{
     res.redirect('/home?petSaved');
 })
 
-mongoose.connect('mongodb://localhost:27017/animate', {
+mongoose.connect(mongoURL, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
 .then(() => {
-    console.log('Connected to the DB');
+    console.log('Connected to DB');
 })
 .catch((err) => {
-    console.log('Not connected to the DB : ' + err);
+    console.log('Not connected to DB : ' + err);
 })
 
 //listening for requests on port 3000
-app.listen(3000, ()=> {
-    console.log('Server listening on port 3000');
+app.listen(port, ()=> {
+    console.log(`Server listening on port ${port}`);
 })
