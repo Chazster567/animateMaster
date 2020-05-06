@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var { isAuth } = require('./middleware/isAuth')
 var User = require('./models/User');
 var Pet = require('./models/Pet')
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/animate';
 require('./middleware/passport')(passport);
 
