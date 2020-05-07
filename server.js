@@ -8,7 +8,8 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var { isAuth } = require('./middleware/isAuth')
 var User = require('./models/User');
-var Pet = require('./models/Pet')
+var Pet = require('./models/Pet');
+var Reminder = require('./models/Reminder');
 const port = process.env.PORT || 3000;
 const mongoURL = process.env.mongoURL || 'mongodb://localhost:27017/animate';
 require('./middleware/passport')(passport);
@@ -51,7 +52,14 @@ app.get('/home', isAuth, (req, res) => {
         Pet.find({ user: req.user.id }).lean()
             .exec((err, pets) => {
                 if (pets.length) {
-                    res.render('home', { layout: 'main', pets: pets, petsExist: true, userLogged: true, username: req.user.username });
+                    Reminder.find({ user: req.user.id }).lean()
+                    .exec((err, reminders) => {
+                        if (reminders.length) {
+                        res.render('home', { layout: 'main', reminders: reminders, remindersExist: true, pets: pets, petsExist: true, userLogged: true, username: req.user.username });
+                        } else {
+                        res.render('home', { layout: 'main', reminders: reminders, remindersExist: false, pets: pets, petsExist: true, userLogged: true, username: req.user.username });
+                        }
+                    });
                 } else {
                     res.render('home', { layout: 'main', pets: pets, petsExist: false, userLogged: true, username: req.user.username });
                 }
@@ -60,7 +68,7 @@ app.get('/home', isAuth, (req, res) => {
         console.log(err.message);
         res.status(500).send('Server Error')
     }
-})
+});
 
 app.post('/signup', async (req, res) =>{
     const { username, password } = req.body;
@@ -114,6 +122,18 @@ app.post('/petadd', (req, res) =>{
     });
     pet.save();
     res.redirect('/home?petSaved');
+})
+
+app.post('/reminder', (req, res) =>{
+    const { pet, event, time } = req.body;
+    var reminder = new Reminder({
+        user: req.user.id,
+        pet,
+        event,
+        time
+    });
+    reminder.save();
+    res.redirect('/home?reminderSaved')
 })
 
 mongoose.connect(mongoURL, {
