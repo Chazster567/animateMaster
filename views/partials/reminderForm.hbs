@@ -1,0 +1,17 @@
+<form action="/reminder" method="POST">
+    <p>Pet</p>
+    <select id="cars" name="pet">
+    {{#if petsExist}}
+    {{#each pets}}
+        <option value={{this.name}}>{{this.name}}</option>
+    {{/each}}
+    {{else}}
+        <option value="2">No pets to choose from!</option>
+    {{/if}}
+    </select>
+    <p>Event</p>
+    <input type="text" name="event" placeholder="Enter Title">
+    <p>Time</p>
+    <input type="text" name="time" placeholder="Enter Time">
+    <input type="submit" value="Submit"><br>
+</form>

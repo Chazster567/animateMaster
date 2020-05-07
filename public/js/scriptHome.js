@@ -31,6 +31,10 @@ if (queryString == '?petSaved') {
     messageContainer.innerHTML = `<div>Pet Saved!</div>`;
 }
 
+if (queryString == '?reminderSaved') {
+  messageContainer2.innerHTML = `<div>Reminder Saved!</div>`;
+}
+
 $(window).on('load', function() {
 	$(".loader").delay(2000).fadeOut("slow");
   $("#overlayer").delay(2000).fadeOut("slow");

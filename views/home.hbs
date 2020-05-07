@@ -50,6 +50,31 @@
           <h2>Calendar</h2>
         </div>
       </div>
+      <div class="row petbox overfillno">
+        <div class="col-lg-3"></div>
+          <div class="col-lg-6 col-xs-12 carded">
+            <div class="row">
+            <div class="col-lg-6">
+              <img class="avatar-pet" src="assets/avatar.svg">
+              <h2>Add Event</h2>
+            </div>
+            <div class="col-lg-6">
+              {{>reminderForm}}
+            </div>
+            </div>
+          </div>
+        <div class="col-lg-3"></div>
+      </div>
+      <div class="messageContainer2 text-center"></div>
+      <div class="row petbox overfillno">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 col-xs-12">
+          <div class="row">
+            {{>reminderList}}
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
     </section>
 
     <section id="pets">
@@ -87,11 +112,23 @@
 
     <section id="profile">
       <div class="row overfillno">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-md-10 col-xs-12 offset-md-1 justify-content-center text-center">
           <h2>Profile</h2>
         </div>
-        <div class="col-2"></div>
+      </div>
+      <div class="row petbox overfillno">
+        <div class="col-lg-3"></div>
+          <div class="col-lg-6 col-xs-12 carded">
+            <div class="row">
+            <div class="col-lg-6">
+              <img class="avatar-pet" src="assets/avatar.svg">
+            </div>
+            <div class="col-lg-6">
+              <h2>{{username}}</h2>
+            </div>
+            </div>
+          </div>
+        <div class="col-lg-3"></div>
       </div>
     </section>
 
