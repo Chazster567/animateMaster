@@ -1,6 +1,6 @@
 <form action="/reminder" method="POST" autocomplete="off">
     <p>Pet</p>
-    <select id="cars" name="pet">
+    <select id="pets" name="pet">
     {{#if petsExist}}
     {{#each pets}}
         <option value={{this.name}}>{{this.name}}</option>
