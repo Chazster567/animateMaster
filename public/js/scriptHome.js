@@ -24,15 +24,17 @@ $(function () {
   });
 });
 
-const messageContainer = document.querySelector('.messageContainer');
-const queryString = window.location.search;
+const petContainer = document.querySelector('.petContainer');
+const reminderContainer = document.querySelector('.reminderContainer');
+const petString = window.location.search;
+const reminderString = window.location.search;
 
-if (queryString == '?petSaved') {
-    messageContainer.innerHTML = `<div>Pet Saved!</div>`;
+if (petString == '?petSaved') {
+  petContainer.innerHTML = `<div>Pet Saved!</div>`;
 }
 
-if (queryString == '?reminderSaved') {
-  messageContainer2.innerHTML = `<div>Reminder Saved!</div>`;
+if (reminderString == '?reminderSaved') {
+  reminderContainer.innerHTML = `<div>Reminder Saved!</div>`;
 }
 
 $(window).on('load', function() {

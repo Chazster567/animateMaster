@@ -1,4 +1,4 @@
-<form action="/reminder" method="POST">
+<form action="/reminder" method="POST" autocomplete="off">
     <p>Pet</p>
     <select id="cars" name="pet">
     {{#if petsExist}}
@@ -6,7 +6,7 @@
         <option value={{this.name}}>{{this.name}}</option>
     {{/each}}
     {{else}}
-        <option value="2">No pets to choose from!</option>
+        <option value="null">No pets to choose from!</option>
     {{/if}}
     </select>
     <p>Event</p>

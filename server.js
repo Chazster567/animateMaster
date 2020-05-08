@@ -132,8 +132,12 @@ app.post('/reminder', (req, res) =>{
         event,
         time
     });
-    reminder.save();
-    res.redirect('/home?reminderSaved')
+    if(pet == 'null') {
+        res.redirect('/home');
+    } else {
+        reminder.save();
+        res.redirect('/home?reminderSaved');
+    }
 })
 
 mongoose.connect(mongoURL, {
