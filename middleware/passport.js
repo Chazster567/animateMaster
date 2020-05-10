@@ -1,9 +1,12 @@
+//requires mongoose for the database and bcrypt for password hashing
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
+//requires user model
 const User = require('../models/User');
 
+//uses bcrypt to compare passwords and returns errors if passwords dont exist
 module.exports = (passport) =>{
     passport.use(
         new LocalStrategy((username, password, done) =>{

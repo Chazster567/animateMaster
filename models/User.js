@@ -1,5 +1,7 @@
+//requires mongoose
 var mongoose = require('mongoose');
 
+//creates schema for adding a user
 const UserSchema = new mongoose.Schema({
     username: {
         type: String
@@ -13,4 +15,5 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
+//exports user as a mongoose model
 module.exports = User = mongoose.model('user', UserSchema);

@@ -1,3 +1,4 @@
+//checks user is authenticated when changes are made. returns error if not
 module.exports = {
     isAuth: (req, res, next) =>{
         try{
