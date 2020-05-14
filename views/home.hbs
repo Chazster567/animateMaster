@@ -55,7 +55,7 @@
     <div class="col-lg-6 col-xs-12 carded">
       <div class="row">
         <div class="col-lg-6">
-          <img class="avatar-pet" src="assets/avatar.svg">
+          <img class="avatar-pet" src="assets/event.svg">
           <h2>Add Event</h2>
         </div>
         <div class="col-lg-6">    
@@ -88,7 +88,7 @@
     <div class="col-lg-6 col-xs-12 carded">
       <div class="row">
         <div class="col-lg-6">
-          <img class="avatar-pet" src="assets/avatar.svg">
+          <img class="avatar-pet" src="assets/pet.svg">
           <h2>Add Pet</h2>
         </div>
         <div class="col-lg-6">
@@ -125,6 +125,15 @@
         </div>
         <div class="col-lg-6">
           <h2>{{username}}</h2>
+          {{#if petsExist}}
+          <div>Pets: 
+          {{#each pets}}
+          {{this.name}}
+          {{/each}}
+          </div>
+          {{else}}
+          <h1>No Pets</h1>
+          {{/if}}
         </div>
       </div>
     </div>

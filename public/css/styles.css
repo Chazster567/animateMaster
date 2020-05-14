@@ -14,30 +14,6 @@ body.bGround {
 }
 
 @media screen and (max-width: 567px) {
-  body.headMain {
-    background: #949494;
-    background-size: cover;
-    background-position: bottom;
-  }
-}
-
-@media screen and (min-width: 568px) {
-  body.headMain {
-    background: #949494;
-    background-size: cover;
-    background-position: bottom;
-  }
-}
-
-@media screen and (min-width: 990px) {
-  body.headMain {
-    background: #949494;
-    background-size: cover;
-    background-position: bottom;
-  }
-}
-
-@media screen and (max-width: 567px) {
   .dog-head {
     width: 90vw;
     position: absolute;
@@ -92,10 +68,10 @@ body.bGround {
 }
 
 .bg-head {
-  background-color: #949494;
+  background-color: #aaaaaa;
   position: absolute;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   bottom: 0px;
 }
 
