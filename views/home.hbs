@@ -4,193 +4,190 @@
 </div>
 
 <nav class="navbar sticky-top navbar-expand-md navbar-light text-uppercase" style="background-color: white;">
-      <div class="col-md-1"></div>
-        <a href="">
-          <img src="assets/animateIcon.svg" class="navbar-brand branding">
-        </a>
-        <button class="navbar-toggler text-uppercase text-white rounded" style="background-color: #720429;" data-toggle="collapse" data-target="#mobileMenu">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="mobileMenu">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#calendar">Calendar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pets">Pets</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#profile">Profile</a>
-            </li>
-          </ul>
-          {{#if userLogged}}
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link">{{username}},</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signout">Logout?</a>
-            </li>
-          </ul>
-        </div>
-      <div class="col-md-1"></div>
-    </nav>
-
-    <section id="head">
-      <picture>
-      <source class="vari" media="(min-width: 992px)" srcset="assets/animateHead.png">
-      <source class="vari" media="(min-width: 576px)" srcset="assets/animateHeadMed.png">
-      <img class="vari" src="assets/animateHeadSml.png" alt="HeaderImage">
-      </picture>
-    </section>
-
-    <section id="calendar">
-      <div class="row overfillno" style="margin-top: 100vh;">
-        <div class="title col-md-10 col-xs-12 offset-md-1 justify-content-center text-center">
-          <h2>Calendar</h2>
-        </div>
-      </div>
-      <div class="row petbox overfillno">
-        <div class="col-lg-3"></div>
-          <div class="col-lg-6 col-xs-12 carded">
-            <div class="row">
-            <div class="col-lg-6">
-              <img class="avatar-pet" src="assets/avatar.svg">
-              <h2>Add Event</h2>
-            </div>
-            <div class="col-lg-6">
-              {{>reminderForm}}
-            </div>
-            </div>
-          </div>
-        <div class="col-lg-3"></div>
-      </div>
-      <div class="reminderContainer text-center"></div>
-      <div class="row petbox overfillno">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10 col-xs-12">
-          <div class="row">
-            {{>reminderList}}
-          </div>
-        </div>
-        <div class="col-lg-1"></div>
-      </div>
-    </section>
-
-    <section id="pets">
-      <div class="row overfillno">
-        <div class="title col-md-10 col-xs-12 offset-md-1 justify-content-center text-center">
-          <h2>Pets</h2>
-        </div>
-      </div>
-      <div class="row petbox overfillno">
-        <div class="col-lg-3"></div>
-          <div class="col-lg-6 col-xs-12 carded">
-            <div class="row">
-            <div class="col-lg-6">
-              <img class="avatar-pet" src="assets/avatar.svg">
-              <h2>Add Pet</h2>
-            </div>
-            <div class="col-lg-6">
-              {{>petaddForm}}
-            </div>
-            </div>
-          </div>
-        <div class="col-lg-3"></div>
-      </div>
-      <div class="petContainer text-center"></div>
-      <div class="row petbox overfillno">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10 col-xs-12">
-          <div class="row">
-            {{>petaddList}}
-          </div>
-        </div>
-        <div class="col-lg-1"></div>
-      </div>
-    </section>
-
-    <section id="profile">
-      <div class="row overfillno">
-        <div class="title col-md-10 col-xs-12 offset-md-1 justify-content-center text-center">
-          <h2>Profile</h2>
-        </div>
-      </div>
-      <div class="row petbox overfillno">
-        <div class="col-lg-3"></div>
-          <div class="col-lg-6 col-xs-12 carded">
-            <div class="row">
-            <div class="col-lg-6">
-              <img class="avatar-pet" src="assets/avatar.svg">
-            </div>
-            <div class="col-lg-6">
-              <h2>{{username}}</h2>
-            </div>
-            </div>
-          </div>
-        <div class="col-lg-3"></div>
-      </div>
-    </section>
-
-      <!-- Site footer -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-9">
-            <h6>About</h6>
-            <p class="text-justify">AniMate is an interactive timetable and personal assistant revolving around your pets. By keeping track of feeding times, checkups and treatments, AniMate will clearly display tasks for you in a timely fashion. Whether you're inundated with animals or just a bit forgetful, AniMate can help!</p>
-          </div>
-  
-          <div class="col-xs-12 col-md-3">
-            <h6>Categories</h6>
-            <ul class="footer-links">
-              <li><a href="#calendar">Calendar</a></li>
-              <li><a href="#pets">Pets</a></li>
-              <li><a href="#profile">Profile</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr>
-      </div>
+  <div class="col-md-1"></div>
+    <a href="">
+      <img src="assets/animateIcon.svg" class="navbar-brand branding">
+    </a>
+    <button class="navbar-toggler text-uppercase text-white rounded" style="background-color: #720429;" data-toggle="collapse" data-target="#mobileMenu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="mobileMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#calendar">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pets">Pets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#profile">Profile</a>
+        </li>
+      </ul>
       
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">&copy; 2020 All Rights Reserved by 
-            <a href="#">AniMate</a>.
-            </p>
-          </div>
+      {{#if userLogged}}
+
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link">{{username}},</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signout">Logout?</a>
+        </li>
+      </ul>
+    </div>
+  <div class="col-md-1"></div>
+</nav>
+
+<section id="head">
+  <div class="bg-head"></div>
+  <img class="dog-head" src="/assets/animateDog.png">
+  <img class="logo-head" src="/assets/animateLogo.svg">
+</section>
+
+<section id="calendar">
+  <div class="row overfillno" style="margin-top: 100vh;">
+    <div class="title col-md-10 col-xs-12 offset-md-1 justify-content-center text-center">
+      <h2>Calendar</h2>
+    </div>
+  </div>
+  <div class="row petbox overfillno">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-xs-12 carded">
+      <div class="row">
+        <div class="col-lg-6">
+          <img class="avatar-pet" src="assets/avatar.svg">
+          <h2>Add Event</h2>
+        </div>
+        <div class="col-lg-6">    
+          {{>reminderForm}}
         </div>
       </div>
-    </footer>
-          
-          {{else}}
-
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a></li>
-            <li class= "nav-item">
-              <a class="nav-link disabled">or</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/create">Sign up</a>
-            </li>
-          </ul>
-        </div>
-      <div class="col-md-1"></div>
-    </nav>
-
-    <section id="head">
-      <picture>
-      <source media="(min-width: 992px)" class="vari" srcset="assets/animateHead.png">
-      <source media="(min-width: 576px)" class="vari" srcset="assets/animateHeadMed.png">
-      <img class="vari" src="assets/animateHeadSml.png" alt="HeaderImage">
-      </picture>
-      <div class="load-not">
-        <p>Login or Sign Up to begin!</p>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+  <div class="reminderContainer text-center"></div>
+  <div class="row petbox overfillno">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10 col-xs-12">
+      <div class="row">
+        {{>reminderList}}
       </div>
-    </section>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</section>
+
+<section id="pets">
+  <div class="row overfillno">
+    <div class="title col-md-10 col-xs-12 offset-md-1 justify-content-center text-center">
+      <h2>Pets</h2>
+    </div>
+  </div>
+  <div class="row petbox overfillno">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-xs-12 carded">
+      <div class="row">
+        <div class="col-lg-6">
+          <img class="avatar-pet" src="assets/avatar.svg">
+          <h2>Add Pet</h2>
+        </div>
+        <div class="col-lg-6">
+          {{>petaddForm}}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+  <div class="petContainer text-center"></div>
+  <div class="row petbox overfillno">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10 col-xs-12">
+      <div class="row">
+        {{>petaddList}}
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="row overfillno">
+    <div class="title col-md-10 col-xs-12 offset-md-1 justify-content-center text-center">
+      <h2>Profile</h2>
+    </div>
+  </div>
+  <div class="row petbox overfillno">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-xs-12 carded">
+      <div class="row">
+        <div class="col-lg-6">
+          <img class="avatar-pet" src="assets/avatar.svg">
+        </div>
+        <div class="col-lg-6">
+          <h2>{{username}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <h6>About</h6>
+        <p class="text-justify">AniMate is an interactive timetable and personal assistant revolving around your pets. By keeping track of feeding times, checkups and treatments, AniMate will clearly display tasks for you in a timely fashion. Whether you're inundated with animals or just a bit forgetful, AniMate can help!</p>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+          <li><a href="#calendar">Calendar</a></li>
+          <li><a href="#pets">Pets</a></li>
+          <li><a href="#profile">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+      
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">&copy; 2020 All Rights Reserved by 
+          <a href="#">AniMate</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
           
-          {{/if}}
+{{else}}
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a></li>
+      <li class= "nav-item">
+        <a class="nav-link disabled">or</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/create">Sign up</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-1"></div>
+</nav>
+
+<section id="head">
+  <div class="bg-head"></div>
+  <img class="dog-head" src="/assets/animateDog.png">
+  <img class="logo-head" src="/assets/animateLogo.svg">
+  <div class="load-not">
+    <p>Login or Sign Up to begin!</p>
+  </div>
+</section>
+          
+{{/if}}
         
 <script src="/js/scriptHome.js"></script>

@@ -13,6 +13,92 @@ body.bGround {
   background-position: center;
 }
 
+@media screen and (max-width: 567px) {
+  body.headMain {
+    background: #949494;
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  body.headMain {
+    background: #949494;
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  body.headMain {
+    background: #949494;
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .dog-head {
+    width: 90vw;
+    position: absolute;
+    bottom: 0px;
+    left: 5vw;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  .dog-head {
+    width: 80vw;
+    position: absolute;
+    bottom: 0px;
+    left: 10vw;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .dog-head {
+    width: 35vw;
+    position: absolute;
+    bottom: 0px;
+    left: 10vw;
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .logo-head {
+    width: 90vw;
+    position: absolute;
+    top: 25vh;
+    left: 5vw;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  .logo-head {
+    width: 80vw;
+    position: absolute;
+    top: 20vh;
+    left: 10vw;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .logo-head {
+    width: 35vw;
+    position: absolute;
+    top: 50vh;
+    left: 55vw;
+  }
+}
+
+.bg-head {
+  background-color: #949494;
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  bottom: 0px;
+}
+
 .title {
   margin-bottom: 20px;
 }
